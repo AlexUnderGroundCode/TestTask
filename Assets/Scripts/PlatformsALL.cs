@@ -6,13 +6,19 @@ public class PlatformsALL : MonoBehaviour
 {
 
     public float forceJump = 50f;
+    [SerializeField] ParticleSystem platformSplash = null;
 
-    
+    private void Start()
+    {
+        platformSplash.Stop();
+    }
+
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.relativeVelocity.y < 0)
         {
              Movement.instance.bounceRB.velocity = Vector2.up * forceJump;
+        
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

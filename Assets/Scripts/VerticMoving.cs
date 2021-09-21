@@ -6,15 +6,14 @@ public class VerticMoving : MonoBehaviour
 {
     private float maxY = 0.3f;
     private float minY = -0.3f;
-    void Start()
-    {
-        Vector3 currentPos = transform.position;
+    public float _speed = 1f;
+    
 
-        while (true)
-        {
-            
-            
-        }
+    private void Update()
+    {
+     
+        
+        transform.position += transform.up * _speed * Time.deltaTime;
     }
 
 
